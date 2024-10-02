@@ -7,13 +7,13 @@ import Swal from 'sweetalert2';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 @Component({
-  selector: 'app-add-product',
+  selector: 'app-delete-product',
   standalone: true,
-  imports: [HeaderAdminComponent, SweetAlert2Module, ButtonEffectDirective, ReactiveFormsModule],
-  templateUrl: './add-product.component.html',
-  styleUrl: './add-product.component.scss'
+  imports: [HeaderAdminComponent, SweetAlert2Module, ReactiveFormsModule],
+  templateUrl: './delete-product.component.html',
+  styleUrl: './delete-product.component.scss'
 })
-export class AddProductComponent {
+export class DeleteProductComponent {
   myFormAdd: FormGroup;
   constructor(private fm: FormBuilder,private myS: MyServiceService) {
     this.myFormAdd = this.fm.group({
@@ -27,16 +27,9 @@ export class AddProductComponent {
     this.myS.postProduct(this.myFormAdd.value).subscribe(
       data => {
         Swal.fire({
-          title: 'Agregar producto',
+          title: 'Borrar producto',
           text: 'Se logro agregar el producto',
           icon: 'success'
-        })
-      },
-      error => {
-        Swal.fire({
-          title: 'Agregar producto',
-          text: 'No se logro agregar',
-          icon:'error'
         })
       }
     );

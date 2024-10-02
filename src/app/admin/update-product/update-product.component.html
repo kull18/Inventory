@@ -3,8 +3,9 @@
     <div id="headerContainer">
         <app-header-admin />
     </div>
-    <div id="formContainer">
-        <form [formGroup]="myFormAdd" (ngSubmit)="addProduct()">
+    <div id="formContainer" [ngClass]="{'extend': 'extend'}">
+        <div *ngIf="!complete">
+            <form [formGroup]="myFormAdd" (ngSubmit)="addProduct()">
             <label>Nombre del producto:</label>
             <input placeholder="nombre">
             <label>costo del producto</label>
@@ -12,7 +13,7 @@
             <label>cantiad</label>
             <input placeholder="cantidad">
             <button type="submit">Agregar producto</button>
-        </form>
-
+            </form>
+        </div>
     </div>
 </div>

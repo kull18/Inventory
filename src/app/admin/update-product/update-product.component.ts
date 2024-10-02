@@ -4,16 +4,19 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { ButtonEffectDirective } from '../../shared/directives/button-effect.directive';
 import { MyServiceService } from '../../core/services/my-service.service';
 import Swal from 'sweetalert2';
+import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+
 @Component({
-  selector: 'app-add-product',
+  selector: 'app-update-product',
   standalone: true,
-  imports: [HeaderAdminComponent, SweetAlert2Module, ButtonEffectDirective, ReactiveFormsModule],
-  templateUrl: './add-product.component.html',
-  styleUrl: './add-product.component.scss'
+  imports: [HeaderAdminComponent, SweetAlert2Module, ButtonEffectDirective, ReactiveFormsModule, CommonModule],
+  templateUrl: './update-product.component.html',
+  styleUrl: './update-product.component.scss'
 })
-export class AddProductComponent {
+export class UpdateProductComponent {
+  complete: boolean = false;
   myFormAdd: FormGroup;
   constructor(private fm: FormBuilder,private myS: MyServiceService) {
     this.myFormAdd = this.fm.group({
