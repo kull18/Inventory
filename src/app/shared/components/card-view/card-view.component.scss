@@ -1,22 +1,67 @@
-#nameContainer {
+.imageIcon {
     width: 100%;
-    height: 10%;
-    border: 1px solid red; 
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    img {
+        border: 1px solid silver;
+        width: 60%;
+        height: 60%;
+    }
 }
 
-#costContainer {
+#infoContainer {
     width: 100%;
-    height: 20%;
-    border: 1px solid blue;
+    height: auto;
+    #nameContainer {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+    }
+
+    #costContainer {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+    }
+
+    #amountContainer {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #brandContainer {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
-#amountContainer {
-    width: 100%;
-    height: 30%;
+.title{
+    font-family: 12px;
+    font-family: 'san-serif', Rubik;
 }
 
-#brandContainer {
-    width: 100%;
-    height: 40%;
+.text {
+    font-size: 14px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-

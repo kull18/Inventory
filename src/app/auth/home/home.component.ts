@@ -3,20 +3,26 @@ import { DashboardComponent } from "../../shared/components/dashboard/dashboard.
 import { CardViewComponent } from "../../shared/components/card-view/card-view.component";
 import { Product } from '../../core/models/Product';
 import { MyServiceService } from '../../core/services/my-service.service';
+import { AddProductComponent } from "../../admin/add-product/add-product.component";
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [DashboardComponent, CardViewComponent],
+  imports: [DashboardComponent, CardViewComponent, AddProductComponent, CommonModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit {
   products: Product[] = [];
 
-  constructor() {}
+  constructor(private myService: MyServiceService) {}
 
   ngOnInit(): void {
-  
+    this.myService.getData().subscribe(
+      data => {
+        this.products = data; 
+      }
+    )
   }
 
 }

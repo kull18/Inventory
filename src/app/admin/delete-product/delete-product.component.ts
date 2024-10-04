@@ -18,18 +18,25 @@ export class DeleteProductComponent {
   constructor(private fm: FormBuilder,private myS: MyServiceService) {
     this.myFormAdd = this.fm.group({
       name: [''],
-      cost: [0],
       brand: ['']
     })
   }
 
   addProduct(): void {
-    this.myS.postProduct(this.myFormAdd.value).subscribe(
+    const myForm = this.myFormAdd.value;
+    this.myS.deleteProduct(myForm.name, myForm.brand).subscribe(
       data => {
         Swal.fire({
           title: 'Borrar producto',
           text: 'Se logro agregar el producto',
           icon: 'success'
+        })
+      },
+      error => {
+        Swal.fire({
+          title: "Eliminar",
+          text: "No se logro eliminar",
+          icon: "warning"
         })
       }
     );

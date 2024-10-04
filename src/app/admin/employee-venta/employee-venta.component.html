@@ -1,0 +1,27 @@
+<!-- Contenido del footer -->
+<div id="main">
+    <div id="headerContainer">
+        <app-header-admin></app-header-admin>
+    </div>
+    <div id="formContainer">
+        <div class="cardVenta" *ngFor="let product of products">
+            <app-card-venta [product]="product" (productId)="handleProductAdded($event)"></app-card-venta>
+        </div>
+    </div>
+    <div id="soldContainer">
+        <div id="cardSold">
+            <div id="nameSold">
+                <p>Venta</p>
+            </div>
+            <div id="informationSold">
+                <p>Total de Ventas: {{amountTotal}}</p>
+                <div *ngFor="let item of soldProducts">
+                    <p>{{item.name}} - {{item.cost}}</p>
+                </div>
+            </div>
+            <div id="generateSold">
+                <button (click)="generate()">Generar venta</button>
+            </div>
+        </div>
+    </div>
+</div>

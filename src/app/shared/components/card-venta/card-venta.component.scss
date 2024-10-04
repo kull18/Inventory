@@ -1,0 +1,57 @@
+#imageContainer {
+    width: 20%;
+    height: 100%;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+#infoContainer {
+    width: 80%;
+    height: 100%;
+    border: 1px solid violet;
+
+    #nameContainer {
+        width: 80%;
+        height: 25%;
+        border: 1px solid red;
+    }
+
+    #costContainer {
+        width: 80%;
+        height: 25%;
+        border: 1px solid blue
+    }
+
+    #amountContainer {
+        width: 80%;
+        height: 25%;
+        border: 1px solid red;
+    }
+
+    #brandContainer {
+        width: 80%;
+        height: 25%;
+        border: 1px solid blue;
+    }
+
+    #iconAdd {
+        width: 20%;
+        height: 100%;
+        border: 1px solid red;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+            width: 60px;
+            height: 60px;
+        }
+    }
+
+}

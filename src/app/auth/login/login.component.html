@@ -1,7 +1,21 @@
-<div id="mainContent">
-    <form>
-        <label>Nombre de la persona:</label>
-        <input>
-        <button routerLink="./admin/add" (click)="login()">Agregara</button>
+<div id="main">
+    <form [formGroup]="myForm" (ngSubmit)="login()">
+        <div id="mainContainerForm">
+            <div id="ferreteriaIcon">
+                <img src="assets/cropped-iconos-14-1.png">
+            </div>
+            <div class="inputContainer">
+                <label>Nombre de la persona:</label>
+                <input placeholder="nombre de ususario:" formControlName="name">
+            </div>
+            <div class="inputContainer">
+                <label>Contraseña: </label>
+                <input formControlName="password" placeholder="contraseña">
+            </div>
+
+            <div id="buttonContainer">
+                <button type="submit">Agregara</button>
+            </div>
+        </div>
     </form>
 </div>

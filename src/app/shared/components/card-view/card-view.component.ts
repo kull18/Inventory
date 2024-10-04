@@ -10,8 +10,10 @@ import { Input } from '@angular/core';
 })
 export class CardViewComponent {
   @Input() product: Product = {
+    id_product: 0,
     name: '',
     cost: 0,
+    amount: 0,
     brand: ''
   }
 }

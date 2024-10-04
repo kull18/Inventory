@@ -9,7 +9,7 @@ export class ButtonEffectDirective {
 
   constructor(private buttonEl: ElementRef, private myService: MyServiceService, private rend2: Renderer2) { }
   //swal effect and
-  @HostListener('click') onClick() {
+  @HostListener('click', ['$event target']) onClick(): void {
 
   }
 }

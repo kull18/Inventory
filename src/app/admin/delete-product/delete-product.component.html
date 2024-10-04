@@ -5,13 +5,15 @@
     </div>
     <div id="formContainer">
         <form [formGroup]="myFormAdd" (ngSubmit)="addProduct()">
-            <label>Nombre del producto:</label>
-            <input placeholder="nombre">
-            <label>costo del producto</label>
-            <input placeholder="costo">
-            <label>cantiad</label>
-            <input placeholder="cantidad">
-            <button type="submit">Agregar producto</button>
+            <div id="formQuestions">
+                <label>Nombre del producto:</label>
+                <input formControlName="name" placeholder="nombre">
+                <label>Marca</label>
+                <input formControlName="brand" placeholder="marca">
+            </div>
+            <div id="buttonForm">
+                <button type="submit">Agregar producto</button>
+            </div>
         </form>
 
     </div>

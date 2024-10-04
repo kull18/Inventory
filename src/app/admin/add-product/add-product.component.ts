@@ -4,7 +4,7 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { ButtonEffectDirective } from '../../shared/directives/button-effect.directive';
 import { MyServiceService } from '../../core/services/my-service.service';
 import Swal from 'sweetalert2';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'app-add-product',
@@ -17,8 +17,9 @@ export class AddProductComponent {
   myFormAdd: FormGroup;
   constructor(private fm: FormBuilder,private myS: MyServiceService) {
     this.myFormAdd = this.fm.group({
-      name: [''],
-      cost: [0],
+      name: ['', [Validators.minLength(2)]],
+      amount: [],
+      cost: [],
       brand: ['']
     })
   }
