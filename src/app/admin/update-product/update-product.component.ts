@@ -17,31 +17,58 @@ import { ReactiveFormsModule } from '@angular/forms';
 })
 export class UpdateProductComponent {
   complete: boolean = false;
+  nameBoolean: string = '';
+  brandBoolean: string = '';
   myFormAdd: FormGroup;
-  constructor(private fm: FormBuilder,private myS: MyServiceService) {
+  myFormSearch: FormGroup;
+
+  constructor(private fm: FormBuilder, private myS: MyServiceService, private newFm: FormBuilder) {
+    this.myFormSearch = this.newFm.group({
+      nameSearch: [''],
+      brand: ['']
+    })
+
     this.myFormAdd = this.fm.group({
       name: [''],
-      cost: [0],
+      cost: [],
+      amount: [],
       brand: ['']
     })
   }
 
-  addProduct(): void {
-    this.myS.postProduct(this.myFormAdd.value).subscribe(
+  search(): void {
+    const nameObject = this.myFormSearch.value;
+
+
+    this.myS.findByNameBrand(nameObject.nameSearch, nameObject.brand).subscribe(
       data => {
-        Swal.fire({
-          title: 'Agregar producto',
-          text: 'Se logro agregar el producto',
-          icon: 'success'
-        })
+        this.nameBoolean = data.name;
+        this.brandBoolean = data.brand;
+        this.complete = !this.complete;
       },
       error => {
         Swal.fire({
-          title: 'Agregar producto',
-          text: 'No se logro agregar',
-          icon:'error'
+          title: "Encontrar",
+          text: "No se logro encontrar",
+          icon: "error"
         })
       }
-    );
+    )
+  }
+
+  update(): void {
+    this.myS.putProduct(this.nameBoolean, this.brandBoolean, this.myFormAdd.value).subscribe(
+      data => {
+        this.complete = !this.complete;
+        Swal.fire({
+          title: "Actualizar",
+          text: "Se logro actualizar",
+          icon: "success"
+        })
+      },
+      error => {
+        this.complete = !this.complete;
+      }
+    )
   }
 }

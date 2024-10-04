@@ -1,1 +1,24 @@
-<p>home-employee works!</p>
+<div id="main">
+    <div id="dashboard">
+        <app-dashboard-employee />
+    </div>
+    <div id="informationData">
+        <div id="titleContainer">
+            <div id="titleInformation">
+                <h4>Iferretería</h4>
+            </div>
+        </div>
+        <div id="cards">
+            <div id="cardsInformation">
+                <div id="title">
+                    <p>El stock general</p>
+                </div>
+                <div id="contentCardsView">
+                    <div id="card-view-information" *ngFor="let product of products">
+                        <app-card-view [product]="product" id="content-app" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

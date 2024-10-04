@@ -1,0 +1,58 @@
+#main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    #headerContainer {
+        width: 100%;
+        height: 10%;
+        background-color: white;
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+    }
+
+    #formContainer {
+        width: 100%;
+        height: 80%; 
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: center; 
+        align-items: flex-start;
+
+        .cardVenta {
+            width: 300px; 
+            margin: 10px; 
+            background-color: white;
+            box-shadow: -3px -4px 5px -1px rgba(0, 0, 0, 0.12);
+            border-radius: 8px; 
+            overflow: hidden; 
+            transition: transform 0.2s;
+
+            &:hover {
+                transform: scale(1.02);
+            }
+        }
+    }
+
+    #soldContainer {
+        width: 100%;
+        height: 10%; 
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+
+        #cardSold {
+            background-color: white;
+            padding: 20px;
+            box-shadow: -3px -4px 5px -1px rgba(0, 0, 0, 0.12);
+            border-radius: 8px;
+            width: 80%; 
+        }
+
+        #generateSold {
+            margin-top: 10px;
+        }
+    }
+}

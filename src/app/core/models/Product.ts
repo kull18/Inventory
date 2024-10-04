@@ -1,5 +1,7 @@
 export interface Product {
+    id_product: number, 
     name: string,
     cost: number,
-    brand?: string
+    amount: number,
+    brand: string
 }

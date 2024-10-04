@@ -1,0 +1,28 @@
+<!--footer content-->
+<div id="main">
+    <div id="headerContainer">
+        <app-header-admin />
+    </div>
+    <div id="formContainer">
+        <form [formGroup]="myFormAdd" (ngSubmit)="find()">
+            <div id="mainFormContainer">
+                <div id="nameContainer">
+                    <label>Nombre del producto:</label>
+                    <input formControlName="name" placeholder="nombre">
+                </div>
+                <div id="brandContainer">
+                    <label>Marca</label>
+                    <input formControlName="brand" placeholder="marca">
+                </div>
+                <div id="buttonContainer">
+                    <button type="submit">Buscar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="cardFound">
+        <div id="cardContentContainer" *ngFor="let found of founded">
+            <app-product-card-search [product]="found"/>
+        </div>
+    </div>
+</div>

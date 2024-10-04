@@ -7,7 +7,7 @@ import { HomeComponent } from './auth/home/home.component';
 export const routes: Routes = [
     {
         path: '',
-        component: HomeComponent
+        component: LoginComponent
     },
     {
         path: 'admin',

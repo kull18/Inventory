@@ -4,7 +4,7 @@
             <img src="assets/5781e78e1643e53087c5d4a78ef679a7.jpg" alt="mainImage" id="mainImage">
         </a>
         <p>
-            Home
+            Administrador
         </p>
     </div>
     <div id="content">
@@ -39,7 +39,26 @@
                     <p>Actualizar producto</p>
                 </div>
             </div>
-
+            <div class="addIconContainer">
+                <div class="iconContaineradd">
+                    <a [routerLink]="['/admin/search']">
+                        <img src="assets/09_search-1024.webp" id="icon">
+                    </a>
+                </div>
+                <div class="titleContaineradd">
+                    <p>Buscar producto</p>
+                </div>
+            </div>
+            <div class="addIconContainer">
+                <div class="iconContaineradd">
+                    <a [routerLink]="['/']">
+                        <img src="assets/1828490.png" id="icon">
+                    </a>
+                </div>
+                <div class="titleContaineradd">
+                    <p>Log out</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
