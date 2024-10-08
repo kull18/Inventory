@@ -4,9 +4,8 @@
         <app-header-admin></app-header-admin>
     </div>
     <div id="formContainer">
-        <div class="cardVenta" *ngFor="let product of products">
-            <app-card-venta [product]="product" (productId)="handleProductAdded($event)"></app-card-venta>
-        </div>
+        <app-card-venta class="cardVentaProduct" *ngFor="let product of products" [product]="product"
+            (productId)="handleProductAdded($event)" (productDeleteId)="handleProductDelte($event)"/>
     </div>
     <div id="soldContainer">
         <div id="cardSold">
@@ -25,3 +24,4 @@
         </div>
     </div>
 </div>
+

@@ -26,6 +26,7 @@ export class LoginComponent {
       data => {
 
         const role = data.personal.id_role;
+        localStorage.setItem("role", role)
 
         if (role === 1) {
           this.router.navigate(['/admin/home'])

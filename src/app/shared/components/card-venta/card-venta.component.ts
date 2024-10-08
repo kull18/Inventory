@@ -19,9 +19,14 @@ export class CardVentaComponent {
   }
 
   @Output() productId = new EventEmitter<number>();
+  @Output() productDeleteId = new EventEmitter<number>(); 
+
 
   addproduct(): void {
     this.productId.emit(this.product.id_product); 
-    console.log(this.productId)
+  }
+
+  deleteProduct(): void {
+    this.productDeleteId.emit(this.product.id_product);
   }
 }

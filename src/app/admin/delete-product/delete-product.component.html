@@ -4,7 +4,7 @@
         <app-header-admin />
     </div>
     <div id="formContainer">
-        <form [formGroup]="myFormAdd" (ngSubmit)="addProduct()">
+        <form [formGroup]="myFormAdd">
             <div id="formQuestions">
                 <label>Nombre del producto:</label>
                 <input formControlName="name" placeholder="nombre">
@@ -12,7 +12,7 @@
                 <input formControlName="brand" placeholder="marca">
             </div>
             <div id="buttonForm">
-                <button type="submit">Agregar producto</button>
+                <button (click)="addProduct()">Agregar producto</button>
             </div>
         </form>
 

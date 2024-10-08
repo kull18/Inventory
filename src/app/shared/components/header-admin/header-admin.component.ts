@@ -10,4 +10,19 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class HeaderAdminComponent {
 
+  constructor(private router: Router) {}
+
+  getDirection(): void {
+    const directionRole = Number(localStorage.getItem("role"));
+
+    if(directionRole === 1) {
+      console.log("si")
+      this.router.navigate(['/admin/home'])
+    }
+
+    if(directionRole === 2) {
+      this.router.navigate(['/admin/home-employee'])
+    }
+
+  }
 }

@@ -1,7 +1,6 @@
 #imageContainer {
     width: 20%;
     height: 100%;
-    border: 1px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,45 +12,47 @@
 }
 
 #infoContainer {
-    width: 80%;
+    width: 60%;
     height: 100%;
-    border: 1px solid violet;
 
-    #nameContainer {
-        width: 80%;
+    .productInfoContainer {
+        width: 100%;
         height: 25%;
-        border: 1px solid red;
-    }
-
-    #costContainer {
-        width: 80%;
-        height: 25%;
-        border: 1px solid blue
-    }
-
-    #amountContainer {
-        width: 80%;
-        height: 25%;
-        border: 1px solid red;
-    }
-
-    #brandContainer {
-        width: 80%;
-        height: 25%;
-        border: 1px solid blue;
-    }
-
-    #iconAdd {
-        width: 20%;
-        height: 100%;
-        border: 1px solid red;
         display: flex;
         justify-content: center;
         align-items: center;
-        img {
-            width: 60px;
-            height: 60px;
+
+        p {
+            font-size: 13px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
     }
 
+}
+
+#iconAdd {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        width: 60px;
+        height: 60px;
+    }
+
+    button {
+        border: none;
+        background-color: white;
+        cursor: pointer;
+
+        
+        &:hover {
+            transform: scale(1.02);
+            transition: 0.4s;
+        }
+    }
 }
