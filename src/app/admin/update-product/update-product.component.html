@@ -3,48 +3,7 @@
     <div id="headerContainer">
         <app-header-admin />
     </div>
-    <div id="formQuestionContainer">
-        <form [formGroup]="myFormSearch">
-            <div id="contentFormQuestion">
-                <div class="questionsContainer">
-                    <label>Nombre a buscar</label>
-                    <input placeholder="nombre a buscar" formControlName="nameSearch">
-                </div>
-                <div class="questionsContainer">
-                    <label>Marca del producto</label>
-                    <input formControlName="brand" placeholder="marca a buscar">
-                </div>
-                <button id="buttonContainerForm">
-                    <button (click)="search()">Buscar producto</button>
-                </button>
-            </div>
-
-        </form>
-    </div>
     <div id="formContainer" [ngClass]="{'extend': 'extend'}">
-        <div style="width: 50%;  height: 70%; display: flex;flex-direction: column; justify-content: center; align-items: center;"
-            *ngIf="complete">
-            <form [formGroup]="myFormAdd" (ngSubmit)="update()">
-                <div class="questionsContainer">
-                    <label>Nombre del producto:</label>
-                    <input formControlName="name" placeholder="nombre">
-                </div>
-                <div class="questionsContainer">
-                    <label>costo del producto</label>
-                    <input formArrayName="cost" placeholder="costo">
-                </div>
-                <div class="questionsContainer">
-                    <label>cantiad</label>
-                    <input formControlName="amount" placeholder="cantidad">
-                </div>
-                <div class="questionsContainer">
-                    <label>marca</label>
-                    <input formControlName="brand" placeholder="marca">
-                </div>
-                <button id="buttonContainerForm">
-                    <button type="submit">Actualiza producto</button>
-                </button>
-            </form>
-        </div>
+        <app-card-edit *ngFor="let product of products" [product]="product" id="card" (senProductEdited)="update($event)"/>
     </div>
 </div>

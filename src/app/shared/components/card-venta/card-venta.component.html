@@ -2,21 +2,24 @@
     <img src="assets/PACKAGING_DESIGN-1024.webp">
 </div>
 <div id="infoContainer">
-    <div id="nameContainer">
-        {{product.name}}
+    <div class="productInfoContainer">
+        <p>nombre del producto: {{product.name}} </p>
     </div>
-    <div id="costContainer">
-        {{product.cost}}
+    <div class="productInfoContainer">
+        <p>costo del producto: {{product.cost}} </p>
     </div>
-    <div id="amountContainer">
-        {{product.amount}}
+    <div class="productInfoContainer">
+        <p>cantidad disponible: {{product.amount}}</p>
     </div>
-    <div id="brandContainer">
-        {{product.brand}}
+    <div class="productInfoContainer">
+        <p>marca del producto: {{product.brand}}</p>
     </div>
-    <div id="iconAdd">
-        <button (click)="addproduct()">
-            <img src="assets/add-icon-4.jpg">
-        </button>
-    </div>
+</div>
+<div id="iconAdd">
+    <button (click)="addproduct()">
+        <img src="assets/add-icon-4.jpg">
+    </button>
+    <button (click)="deleteProduct()">
+        <img src="assets/delete-icon-2.jpg">
+    </button>
 </div>
